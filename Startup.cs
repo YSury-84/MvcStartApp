@@ -30,7 +30,6 @@ namespace MvcStartApp
             string connection = "Server=localhost\\SQLEXPRESS;Database=master;Trusted_Connection=True;User ID=sa;Password=admin-admin;TrustServerCertificate=true;";
             services.AddDbContext<BlogContext>(options => options.UseSqlServer(connection), ServiceLifetime.Singleton);
             services.AddSingleton<IBlogRepository, BlogRepository>();
-            //services.AddScoped<IBlogRepository, BlogRepository>();
             services.AddDbContext<LogContext>(options => options.UseSqlServer(connection), ServiceLifetime.Singleton);
             services.AddSingleton<ILogRepository, LogRepository>();
             services.AddControllersWithViews();
